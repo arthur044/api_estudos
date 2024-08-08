@@ -5,7 +5,7 @@ server.get("/mensagem/ola", (req, resp) => {
     if (!req.query.nome)
       throw new Error("o parametro Nome deve estar incluso.");
 
-    let nome = req.query.nome ?? `guest`;
+    let nome = req.query.nome;
     resp.send({
       resp: `Ola ${nome}`,
     });

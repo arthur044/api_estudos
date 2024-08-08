@@ -1,7 +1,7 @@
 import {Router } from 'express'
-const server = Router()
-import validarPedidos from '../validations/loja/lojaValidations'
-server.post("/loja/pedido", (req, resp) => {
+const endpoints = Router()
+import validarPedidos from '../validations/loja/lojaValidations.js'
+endpoints.post("/loja/pedido", (req, resp) => {
   try {
     validarPedidos(req)
     let cupom = req.query.cupom;
@@ -28,7 +28,7 @@ server.post("/loja/pedido", (req, resp) => {
     });
   }
 });
-server.post("/acaiteria", (req, resp) => {
+endpoints.post("/acaiteria", (req, resp) => {
   try {
     let qtdpeq = req.body.qtdpeq;
     let qtdmid = req.body.qtdmid;
@@ -49,7 +49,7 @@ server.post("/acaiteria", (req, resp) => {
     });
   }
 });
-server.post("/hamburgueria", (req, resp) => {
+endpoints.post("/hamburgueria", (req, resp) => {
   // pegar especificação do hamburgui
 
   let pedidos = req.body.pedidos;
@@ -81,7 +81,7 @@ server.post("/hamburgueria", (req, resp) => {
     resp: `o total do pedido é ${total}`,
   });
 });
-server.post("/loja/pedido/completo", (req, resp) => {
+endpoints.post("/loja/pedido/completo", (req, resp) => {
   let cupom = req.query.cupom;
   let itens = req.body.itens;
   let parcelas = req.body.parcelas;
@@ -99,4 +99,4 @@ server.post("/loja/pedido/completo", (req, resp) => {
     resp: `o total da compra é : ${total}`,
   });
 });
-export default server;
+export default endpoints;

@@ -1,11 +1,11 @@
 import express from "express"
-
 import calculoController from './Controller/calculosController.js'
 import imgsController from './Controller/imgsController.js'
 import lojasController from './Controller/lojasController.js'
 import msgController from './Controller/msgController.js'
-
+import endpoints from "./Controller/exerciciosController.js" 
 export default function addRoutes(server){
+  server.use(endpoints)
   server.use(imgsController)
   server.use(lojasController)
   server.use(msgController)

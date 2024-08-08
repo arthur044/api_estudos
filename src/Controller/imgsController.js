@@ -1,9 +1,9 @@
 import { Router } from "express";
-const server = Router();
+const endpoints = Router();
 import multer from "multer";
 let uploadPerfil = multer({ dest: "./storage/imgPerfil" });
 
-server.post("/storage/perfil", uploadPerfil.single("imagem"), (req, resp) => {
+endpoints.post("/storage/perfil", uploadPerfil.single("imagem"), (req, resp) => {
   let caminho = req.file.path;
   let extensao = req.file.mimetype;
   let nome = req.file.originalname;
@@ -13,4 +13,4 @@ server.post("/storage/perfil", uploadPerfil.single("imagem"), (req, resp) => {
     nome: nome,
   });
 });
-export default server;
+export default endpoints;

@@ -1,4 +1,4 @@
-export function validarPedidos(req){
+export default function validarPedidos(req){
   if (!req.body.parcelas)
     throw new Error("a quantidade de parcelas deve estar incluso ");
   if (isNaN(req.body.parcelas))
