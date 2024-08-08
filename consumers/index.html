@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>consumer Api</title>
+    <script>
+      async function soma() {
+        let n1 = Number(document.getElementById("num1").value);
+        let n2 = Number(document.getElementById("num2").value);
+        let url = "http://localhost:5050/calculadora/soma/" + n1 + "/" + n2;
+
+        let resp = await fetch(url);
+        let dados = await resp.json();
+        document.getElementById("res").innerHTML = String(dados.resp);
+      }
+      async function dividir() {
+        let n1 = Number(document.getElementById('num1').value)
+        let n2 = Number(document.getElementById('num2').value)
+        let url = 'http://localhost:5050/calculadora/divisao/'+n1+'/'+n2
+        let resp = await fetch(url)
+        let dados = await resp.json()
+        document.getElementById('res').innerHTML = String(dados.resp)
+      }
+      async function subtrair() {
+        let n1 = Number(document.getElementById('num1').value)
+        let n2 = Number(document.getElementById('num2').value)
+        let url = 'http://localhost:5050/calculadora/subtrair/'+n1+'/'+n2
+        let resp = await fetch(url)
+        let dados = await resp.json()
+        document.getElementById('res').innerHTML = String(dados.resp)
+      }
+    </script>
+  </head>
+  <body>
+    <header class="cabecalho">
+      <nav class="nav">
+        <h1>consumers</h1>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="somas">
+      <div class="soma">
+        <h1>soma</h1>
+        <input type="text" id="num1" />
+        <input type="text" id="num2" />
+        <div class="buttons">
+          <button onclick="soma()">Somar</button>
+          <button onclick="dividir()">Dividir</button>
+          <button onclick="subtrair()">Subtrair</button>
+        </div>
+        <div id="res">0</div>
+      </div>
+    </div>
+    <hr>
+    <div class="consumerapi">
+      <h1>api consumer img</h1>
+      <img src="http://localhost:5050/storage/imgPerfil/3fa1544f6a3e1b3bef1d6e5038e3043b.jpeg" alt="sla man">
+    </div>
+  </body>
+</html>

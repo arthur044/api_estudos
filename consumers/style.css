@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  font: 400 26px sans-serif;
+}
+.cabecalho {
+  display: flex;
+}
+.somas {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  align-items: center;
+}
+.soma {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  gap: 15px;
+  background-color: #fff;
+  min-width: auto;
+  box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 5px;
+}
+button {
+  color: black;
+  background-color: white;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 3px;
+  padding: 10px;
+  min-width: auto;
+  text-align: center;
+  width:5em;
+}
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+input {
+  padding: 10px;
+  background-color: #fff;
+  max-width: 280px;
+  border: none;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.consumerapi {
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+}
+img {
+  width: 450px;
+}
