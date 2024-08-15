@@ -3,7 +3,7 @@ import express from "express";
 import cors from "cors";
 import addRoutes from './rotas.js'
 // env
-const porta = process.env.PORTA;
+const porta = process.env.PORT;
 const server = express();
 server.use(express.json());
 server.use(cors());
